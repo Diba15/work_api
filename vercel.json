@@ -1,6 +1,6 @@
 {
     "functions": {
-        "index": {
+        "dist/index": {
             "runtime": "vercel-bun@1.0.0"
         }
     },
@@ -9,7 +9,7 @@
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "index"
+            "dest": "/dist/index"
         }
     ]
 }
