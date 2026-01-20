@@ -1,6 +1,6 @@
 import { Elysia, t } from "elysia";
 import { createClient } from "@supabase/supabase-js";
-import { vercel } from './vercel-adapter';
+import { vercel } from '../src/vercel-adapter';
 import { cors } from '@elysiajs/cors';
 
 // Inisialisasi Supabase
