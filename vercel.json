@@ -1,15 +1,3 @@
 {
-    "functions": {
-        "dist/index": {
-            "runtime": "vercel-bun@1.0.0"
-        }
-    },
-    "buildCommand": "bun install && bun run build",
-    "outputDirectory": "dist",
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "/dist/index"
-        }
-    ]
+    "bunVersion": "1.x"
 }
