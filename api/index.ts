@@ -8,10 +8,10 @@ const supabaseUrl = process.env.SUPABASE_URL || "";
 const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || "";
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-const app = new Elysia()
+const apps = new Elysia()
 
 
-app.use(cors({
+apps.use(cors({
   origin: true,
   methods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
@@ -107,12 +107,12 @@ app.use(cors({
       )
   );
 
-export const GET = app.handle;
-export const POST = app.handle;
-export const PATCH = app.handle;
-export const DELETE = app.handle;
-export const OPTIONS = app.handle;
+export const GET = apps.handle;
+export const POST = apps.handle;
+export const PATCH = apps.handle;
+export const DELETE = apps.handle;
+export const OPTIONS = apps.handle;
 
 if (process.env.NODE_ENV !== 'production') {
-  app.listen(3000);
+  apps.listen(3000);
 }
