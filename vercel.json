@@ -1,12 +1,17 @@
 {
-    "version": 2,
-    "bunVersion": "1.x",
-    "buildCommand": "bun install",
-    "installCommand": "bun install",
-    "rewrites": [
+    "builds": [
         {
-            "source": "/(.*)",
-            "destination": "src/index"
+            "src": "src/index.ts",
+            "use": "@vercel/static-build",
+            "config": {
+                "buildCommand": "bun install && bun run build"
+            }
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/server"
         }
     ]
 }
