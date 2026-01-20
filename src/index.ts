@@ -15,14 +15,14 @@ const app = new Elysia()
     allowedHeaders: ['Content-Type', 'Authorization']
   }))
   .use(vercel())
-  .group("/api", (app) =>
+  .group("/api", (app: any) =>
     app
       /**
        * Menggunakan .guard() untuk membungkus semua route di bawahnya.
        * beforeHandle berfungsi sebagai penjaga (middleware) manual.
        */
       .guard({
-        async beforeHandle({ headers, set }) {
+        async beforeHandle({ headers, set }: any) {
           const authHeader = headers['authorization'];
 
           if (!authHeader || !authHeader.startsWith('Bearer ')) {
@@ -43,7 +43,7 @@ const app = new Elysia()
           // (Elysia mengizinkan penambahan properti secara dinamis pada context)
           (arguments[0] as any).authenticatedUser = user;
         }
-      }, (protectedApp) => protectedApp
+      }, (protectedApp: any) => protectedApp
         // GET: Mengambil data lamaran milik user yang terverifikasi
         .get("/jobs", async ({ set, authenticatedUser }: any) => {
           const { data, error } = await supabase
