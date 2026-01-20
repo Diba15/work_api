@@ -1,15 +1,15 @@
 {
     "functions": {
-        "server": {
+        "api/index": {
             "runtime": "vercel-bun@1.0.0"
         }
     },
     "buildCommand": "bun install && bun run build",
-    "outputDirectory": ".",
+    "outputDirectory": "dist",
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "/server"
+            "dest": "/api/index"
         }
     ]
 }
