@@ -1,17 +1,12 @@
 {
     "version": 2,
-    "$schema": "https://openapi.vercel.sh/vercel.json",
     "bunVersion": "1.x",
-    "builds": [
-        {
-            "src": "src/index.ts",
-            "use": "@vercel/node"
-        }
-    ],
+    "buildCommand": "bun install",
+    "installCommand": "bun install",
     "rewrites": [
         {
             "source": "/(.*)",
-            "destination": "index.ts"
+            "destination": "src/index"
         }
     ]
 }
