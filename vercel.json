@@ -1,17 +1,15 @@
 {
-    "builds": [
-        {
-            "src": "src/index.ts",
-            "use": "@vercel/static-build",
-            "config": {
-                "buildCommand": "bun install && bun run build"
-            }
-        }
-    ],
+    "buildCommand": "bun install && bun run build",
+    "outputDirectory": ".",
     "routes": [
         {
             "src": "/(.*)",
             "dest": "/server"
         }
-    ]
+    ],
+    "functions": {
+        "server": {
+            "runtime": "bun"
+        }
+    }
 }
