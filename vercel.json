@@ -1,4 +1,9 @@
 {
+    "functions": {
+        "server": {
+            "runtime": "vercel-bun@1.0.0"
+        }
+    },
     "buildCommand": "bun install && bun run build",
     "outputDirectory": ".",
     "routes": [
@@ -6,10 +11,5 @@
             "src": "/(.*)",
             "dest": "/server"
         }
-    ],
-    "functions": {
-        "server": {
-            "runtime": "bun"
-        }
-    }
+    ]
 }
