@@ -6,6 +6,6 @@ import type { Elysia } from "elysia";
  * when handlers are exported directly (GET, POST, etc.)
  */
 export function vercel() {
-  return (app: Elysia) => app;
+    return (app: Elysia) => app;
 }
 

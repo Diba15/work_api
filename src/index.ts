@@ -15,7 +15,7 @@ const app = new Elysia()
     allowedHeaders: ['Content-Type', 'Authorization']
   }))
   .use(vercel())
-  .group("/api", (app: any) =>
+  .group("/api", (app) =>
     app
       /**
        * Menggunakan .guard() untuk membungkus semua route di bawahnya.
@@ -43,7 +43,7 @@ const app = new Elysia()
           // (Elysia mengizinkan penambahan properti secara dinamis pada context)
           (arguments[0] as any).authenticatedUser = user;
         }
-      }, (protectedApp: any) => protectedApp
+      }, (protectedApp) => protectedApp
         // GET: Mengambil data lamaran milik user yang terverifikasi
         .get("/jobs", async ({ set, authenticatedUser }: any) => {
           const { data, error } = await supabase
