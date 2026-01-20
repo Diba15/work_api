@@ -1,6 +1,6 @@
 {
     "functions": {
-        "api/index": {
+        "api": {
             "runtime": "vercel-bun@1.0.0"
         }
     },
