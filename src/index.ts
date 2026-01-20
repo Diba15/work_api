@@ -7,12 +7,13 @@ import { cors } from '@elysiajs/cors';
 const supabaseUrl = process.env.SUPABASE_URL || "";
 const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || "";
 const supabase = createClient(supabaseUrl, supabaseKey);
+const frontendUrl = process.env.FRONTEND_URL || "http://localhost:5173";
 
 const apps = new Elysia()
 
 
 apps.use(cors({
-  origin: '*',
+  origin: frontendUrl,
   methods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }))
